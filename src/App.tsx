@@ -67,9 +67,9 @@ export default function App() {
       {/* Header */}
       <header className="relative z-10 text-center pt-[60px] px-5 pb-[30px] animate-fade-down">
         <div className="inline-flex items-center gap-4 sm:gap-5 flex-col sm:flex-row">
-          <div className="w-24 h-24 sm:w-20 sm:h-20 rounded-[20px] overflow-hidden flex items-center justify-center shadow-[0_0_30px_rgba(0,112,209,0.4),0_0_60px_rgba(0,112,209,0.2)] border border-[#0070d1]/30 shrink-0 relative group">
-             <div className="absolute inset-0 bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-             <img src="/logo.png" alt="PS5AZ Logo" className="w-full h-full object-cover" />
+          <div className="w-28 h-28 sm:w-24 sm:h-24 rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(0,229,255,0.3),inset_0_0_20px_rgba(0,112,209,0.4)] border-[3px] border-[#00e5ff]/40 shrink-0 relative group bg-[#060812] p-1 transition-transform duration-300 hover:scale-105">
+             <div className="absolute inset-0 bg-gradient-to-tr from-[#0070d1]/20 to-[#00e5ff]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full z-10 pointer-events-none"></div>
+             <img src="/logo.png" alt="PS5AZ Logo" className="w-full h-full object-cover rounded-full select-none" />
           </div>
           <div className="text-center sm:text-left">
             <h1 className="font-display text-[clamp(24px,5vw,36px)] font-black tracking-[2px] uppercase bg-clip-text text-transparent bg-gradient-to-br from-white via-[#00a8ff] to-[#00e5ff]">
