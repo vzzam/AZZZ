@@ -181,10 +181,6 @@ export default function App() {
                     );
                   })}
                 </div>
-
-                <div className="text-center text-[12px] text-[#5a6a80] mt-2 font-display">
-                  Made with ❤️ by AZZAM · Thanks to <a href="https://x.com/qtr_703?s=21" target="_blank" rel="noreferrer" className="text-[#00a8ff] hover:text-[#00e5ff]">@qtr_703</a>
-                </div>
               </div>
             )}
           </AnimatePresence>
@@ -196,7 +192,7 @@ export default function App() {
         <SectionTitle title="How to use?" />
         <div className="flex gap-4 flex-wrap">
           <StepCard num="1" title="Check the Box" desc="Find the serial number at the bottom of the PS5 box" />
-          <StepCard num="2" title="Copy Serial" desc={<span className="flex items-center justify-center gap-1">Example: <code className="text-[#00e5ff] font-display text-[12px]" dir="ltr">S01-X44A</code></span>} />
+          <StepCard num="2" title="Copy Serial" desc={<span>Example:<br/><code className="text-[#00e5ff] font-display text-[12px] inline-block mt-1.5 px-2.5 py-1 bg-[#0d1120] rounded-md border border-[#1e2d4a] tracking-widest whitespace-nowrap" dir="ltr">S01-X44A</code></span>} />
           <StepCard num="3" title="Enter it here" desc="You will get the result instantly" />
           <StepCard num="4" title="Read Result" desc="Firmware, Model, Region, and Exploit availability" />
         </div>
