@@ -69,7 +69,7 @@ export default function App() {
         <div className="inline-flex items-center gap-4 sm:gap-5 flex-col sm:flex-row">
           <div className="w-24 h-24 sm:w-20 sm:h-20 rounded-[20px] overflow-hidden flex items-center justify-center shadow-[0_0_30px_rgba(0,112,209,0.4),0_0_60px_rgba(0,112,209,0.2)] border border-[#0070d1]/30 shrink-0 relative group">
              <div className="absolute inset-0 bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-             <img src="logo.png" alt="PS5AZ Logo" className="w-full h-full object-cover" />
+             <img src="/logo.png" alt="PS5AZ Logo" className="w-full h-full object-cover" />
           </div>
           <div className="text-center sm:text-left">
             <h1 className="font-display text-[clamp(24px,5vw,36px)] font-black tracking-[2px] uppercase bg-clip-text text-transparent bg-gradient-to-br from-white via-[#00a8ff] to-[#00e5ff]">
