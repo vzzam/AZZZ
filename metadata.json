@@ -1,0 +1,6 @@
+{
+  "name": "PS5AZ Jailbreak Checker",
+  "description": "Examine PS5 Serial Numbers to find out production date, location, firmware version and jailbreak exploit availability.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
