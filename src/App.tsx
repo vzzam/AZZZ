@@ -245,35 +245,16 @@ export default function App() {
             </div>
             
             <div className="w-full flex flex-col items-center justify-center gap-3">
-              <button 
+              <a 
+                href="https://ko-fi.com/vzzam"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-[#111827] hover:bg-[#1e2d4a]/80 border border-[#1e2d4a] text-[#e8eef8] font-bold py-3 px-6 rounded-xl transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 group w-full sm:w-auto hover:border-[#00e5ff]/50 relative overflow-hidden"
-                onClick={(e) => {
-                  navigator.clipboard.writeText('0x9BCEA3b53E276A2340D65a04620Cbf9d901B6617');
-                  const span = e.currentTarget.querySelector('.copy-txt');
-                  if(span) {
-                    span.textContent = 'COPIED!';
-                    span.classList.add('text-[#00e5ff]');
-                    setTimeout(() => { 
-                      if(span) {
-                        span.textContent = 'COPY WALLET ADDRESS'; 
-                        span.classList.remove('text-[#00e5ff]');
-                      }
-                    }, 2000);
-                  }
-                }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0070d1]/10 to-[#00e5ff]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 group-hover:text-[#00e5ff] transition-colors"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-                <span className="copy-txt uppercase tracking-[1px] text-[12px] sm:text-[13px] relative z-10 transition-colors">COPY WALLET ADDRESS</span>
-              </button>
-              
-              <div className="flex flex-wrap items-center justify-center gap-2 mt-2 text-[10px] sm:text-[11px] text-[#5a6a80] font-mono uppercase tracking-[1px] opacity-80">
-                <span>USDT (ERC20/BEP20)</span>
-                <span className="opacity-50">•</span>
-                <span>ETH</span>
-                <span className="opacity-50">•</span>
-                <span>BNB</span>
-              </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 group-hover:text-[#00e5ff] transition-colors"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span className="uppercase tracking-[1px] text-[12px] sm:text-[13px] relative z-10 transition-colors">SUPPORT VIA KO-FI</span>
+              </a>
             </div>
           </div>
         </div>
