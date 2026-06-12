@@ -211,7 +211,7 @@ export default function App() {
       </div>
 
       {/* CTA section */}
-      <div className="relative z-10 text-center max-w-[500px] mx-auto mb-[80px] px-5 animate-fade-up-4">
+      <div className="relative z-10 text-center max-w-[500px] mx-auto mb-[20px] px-5 animate-fade-up-4">
         <div className="bg-gradient-to-br from-[#0070d1]/15 to-[#00e5ff]/5 border border-[#0070d1]/40 rounded-[20px] py-8 px-6">
           <div className="font-display text-[18px] font-black mb-2.5 text-[#e8eef8]">🤖 Try the Telegram Bot</div>
           <div className="text-[14px] text-[#5a6a80] mb-5">Send the serial directly in Telegram and get the full result</div>
@@ -226,6 +226,37 @@ export default function App() {
             </svg>
             Open Bot
           </a>
+        </div>
+      </div>
+
+      {/* Support section */}
+      <div className="relative z-10 text-center max-w-[500px] mx-auto mb-[80px] px-5 animate-fade-up-5 mt-[20px]">
+        <div className="bg-[#111827] border border-[#1e2d4a]/60 rounded-[16px] py-6 px-6 flex flex-col items-center">
+          <div className="font-display text-[14px] font-bold mb-2 text-[#e8eef8] flex items-center gap-2 tracking-[1px]">
+            <span>☕</span> SUPPORT THE PROJECT
+          </div>
+          <div className="text-[12px] text-[#5a6a80] mb-4">If you found this tool helpful, consider supporting</div>
+          <div 
+            className="w-full bg-[#0d1120] border border-[#1e2d4a] rounded-[10px] p-3 flex items-center justify-between gap-3 group hover:border-[#0070d1] transition-colors cursor-pointer"
+            onClick={(e) => {
+              navigator.clipboard.writeText('0x9BCEA3b53E276A2340D65a04620Cbf9d901B6617');
+              const span = e.currentTarget.querySelector('.copy-txt');
+              if(span) {
+                span.textContent = 'COPIED!';
+                setTimeout(() => { if(span) span.textContent = 'COPY'; }, 2000);
+              }
+            }}
+          >
+            <div className="truncate text-[11.5px] sm:text-[13px] font-mono text-[#00e5ff] text-left flex-1" dir="ltr">
+              0x9BCEA3b53E276A2340D65a04620Cbf9d901B6617
+            </div>
+            <div className="text-[10px] sm:text-[11px] text-[#5a6a80] uppercase tracking-[1px] font-bold group-hover:text-[#e8eef8] shrink-0 flex items-center bg-[#1e2d4a]/50 px-2.5 py-1.5 rounded transition-colors group-hover:bg-[#0070d1]">
+               <span className="copy-txt">COPY</span>
+            </div>
+          </div>
+          <div className="text-[10px] text-[#5a6a80] mt-3 uppercase tracking-[1.5px] opacity-70">
+            USDT (ERC20 / BEP20) / ETH / BNB
+          </div>
         </div>
       </div>
 
