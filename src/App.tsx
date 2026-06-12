@@ -19,12 +19,12 @@ const ModelCard = ({ name, desc }: { name: string; desc: string }) => (
 );
 
 const StepCard = ({ num, title, desc }: { num: string; title: string; desc: React.ReactNode }) => (
-  <div className="flex-1 min-w-[160px] bg-[#111827] border border-[#1e2d4a] rounded-[14px] p-5 text-center">
-    <div className="w-9 h-9 bg-[#0070d1] rounded-full flex items-center justify-center font-display text-[14px] font-bold mx-auto mb-3 shadow-[0_0_16px_rgba(0,112,209,0.4)] text-white">
+  <div className="bg-[#111827] border border-[#1e2d4a] rounded-[14px] p-4 sm:p-5 text-center h-full flex flex-col">
+    <div className="w-9 h-9 bg-[#0070d1] rounded-full flex items-center justify-center font-display text-[14px] font-bold mx-auto mb-3 shadow-[0_0_16px_rgba(0,112,209,0.4)] text-white shrink-0">
       {num}
     </div>
-    <div className="text-[13px] text-[#5a6a80] leading-[1.6]">
-      <strong className="text-[#e8eef8] block mb-1 text-[14px]">{title}</strong>
+    <div className="text-[12px] sm:text-[13px] text-[#5a6a80] leading-[1.6] flex-1">
+      <strong className="text-[#e8eef8] block mb-1 text-[13px] sm:text-[14px]">{title}</strong>
       {desc}
     </div>
   </div>
@@ -188,20 +188,20 @@ export default function App() {
       </div>
 
       {/* How To */}
-      <div className="relative z-10 max-w-[900px] mx-auto mb-[60px] px-5 animate-fade-up-2">
+      <div className="relative z-10 max-w-[900px] mx-auto mb-12 sm:mb-16 px-5 animate-fade-up-2">
         <SectionTitle title="How to use?" />
-        <div className="flex gap-4 flex-wrap">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           <StepCard num="1" title="Check the Box" desc="Find the serial number at the bottom of the PS5 box" />
-          <StepCard num="2" title="Copy Serial" desc={<span>Example:<br/><code className="text-[#00e5ff] font-display text-[12px] inline-block mt-1.5 px-2.5 py-1 bg-[#0d1120] rounded-md border border-[#1e2d4a] tracking-widest whitespace-nowrap" dir="ltr">S01-X44A</code></span>} />
+          <StepCard num="2" title="Copy Serial" desc={<span className="flex flex-col items-center gap-1.5 mt-1">Example:<code className="text-[#00e5ff] font-display text-[12px] px-2.5 py-1 bg-[#0d1120] rounded-md border border-[#1e2d4a] tracking-widest whitespace-nowrap" dir="ltr">S01-X44A</code></span>} />
           <StepCard num="3" title="Enter it here" desc="You will get the result instantly" />
           <StepCard num="4" title="Read Result" desc="Firmware, Model, Region, and Exploit availability" />
         </div>
       </div>
 
       {/* Models Database */}
-      <div className="relative z-10 max-w-[900px] mx-auto mb-[60px] px-5 animate-fade-up-3">
+      <div className="relative z-10 max-w-[900px] mx-auto mb-12 sm:mb-16 px-5 animate-fade-up-3">
         <SectionTitle title="Supported Models" />
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-2.5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5">
           <ModelCard name="Fat" desc="CFI-10xx / First Gen" />
           <ModelCard name="Slim CFI-20" desc="X3 / X4 codes" />
           <ModelCard name="Slim CFI-21" desc="X5 codes" />
@@ -211,7 +211,7 @@ export default function App() {
       </div>
 
       {/* CTA section */}
-      <div className="relative z-10 text-center max-w-[500px] mx-auto mb-[20px] px-5 animate-fade-up-4">
+      <div className="relative z-10 text-center max-w-[500px] mx-auto mb-12 sm:mb-16 px-5 animate-fade-up-4">
         <div className="bg-gradient-to-br from-[#0070d1]/15 to-[#00e5ff]/5 border border-[#0070d1]/40 rounded-[20px] py-8 px-6">
           <div className="font-display text-[18px] font-black mb-2.5 text-[#e8eef8]">🤖 Try the Telegram Bot</div>
           <div className="text-[14px] text-[#5a6a80] mb-5">Send the serial directly in Telegram and get the full result</div>
@@ -230,32 +230,51 @@ export default function App() {
       </div>
 
       {/* Support section */}
-      <div className="relative z-10 text-center max-w-[500px] mx-auto mb-[80px] px-5 animate-fade-up-5 mt-[20px]">
-        <div className="bg-[#111827] border border-[#1e2d4a]/60 rounded-[16px] py-6 px-6 flex flex-col items-center">
-          <div className="font-display text-[14px] font-bold mb-2 text-[#e8eef8] flex items-center gap-2 tracking-[1px]">
-            <span>☕</span> SUPPORT THE PROJECT
-          </div>
-          <div className="text-[12px] text-[#5a6a80] mb-4">If you found this tool helpful, consider supporting</div>
-          <div 
-            className="w-full bg-[#0d1120] border border-[#1e2d4a] rounded-[10px] p-3 flex items-center justify-between gap-3 group hover:border-[#0070d1] transition-colors cursor-pointer"
-            onClick={(e) => {
-              navigator.clipboard.writeText('0x9BCEA3b53E276A2340D65a04620Cbf9d901B6617');
-              const span = e.currentTarget.querySelector('.copy-txt');
-              if(span) {
-                span.textContent = 'COPIED!';
-                setTimeout(() => { if(span) span.textContent = 'COPY'; }, 2000);
-              }
-            }}
-          >
-            <div className="truncate text-[11.5px] sm:text-[13px] font-mono text-[#00e5ff] text-left flex-1" dir="ltr">
-              0x9BCEA3b53E276A2340D65a04620Cbf9d901B6617
+      <div className="relative z-10 max-w-[500px] mx-auto mb-16 sm:mb-20 px-5 animate-fade-up-5 mt-12 sm:mt-16">
+        <div className="relative rounded-[20px] p-[1px] overflow-hidden group">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#00e5ff]/20 via-[#0070d1]/10 to-transparent group-hover:from-[#00e5ff]/40 group-hover:to-[#0070d1]/20 transition-colors duration-500"></div>
+          <div className="relative bg-[#060812]/90 backdrop-blur-xl rounded-[20px] p-6 sm:p-8 flex flex-col items-center border border-[#1e2d4a]/50">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#0070d1]/20 to-[#00e5ff]/20 border border-[#00e5ff]/30 flex items-center justify-center mb-4 text-[20px]">
+              ☕
             </div>
-            <div className="text-[10px] sm:text-[11px] text-[#5a6a80] uppercase tracking-[1px] font-bold group-hover:text-[#e8eef8] shrink-0 flex items-center bg-[#1e2d4a]/50 px-2.5 py-1.5 rounded transition-colors group-hover:bg-[#0070d1]">
-               <span className="copy-txt">COPY</span>
+            <div className="font-display text-[16px] xl:text-[18px] font-black mb-2 text-[#e8eef8] tracking-[1px] text-center">
+              SUPPORT THE PROJECT
             </div>
-          </div>
-          <div className="text-[10px] text-[#5a6a80] mt-3 uppercase tracking-[1.5px] opacity-70">
-            USDT (ERC20 / BEP20) / ETH / BNB
+            <div className="text-[13px] text-[#5a6a80] mb-6 text-center max-w-[90%]">
+              If you found this tool helpful, consider supporting development.
+            </div>
+            
+            <div className="w-full flex flex-col items-center justify-center gap-3">
+              <button 
+                className="bg-[#111827] hover:bg-[#1e2d4a]/80 border border-[#1e2d4a] text-[#e8eef8] font-bold py-3 px-6 rounded-xl transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 group w-full sm:w-auto hover:border-[#00e5ff]/50 relative overflow-hidden"
+                onClick={(e) => {
+                  navigator.clipboard.writeText('0x9BCEA3b53E276A2340D65a04620Cbf9d901B6617');
+                  const span = e.currentTarget.querySelector('.copy-txt');
+                  if(span) {
+                    span.textContent = 'COPIED!';
+                    span.classList.add('text-[#00e5ff]');
+                    setTimeout(() => { 
+                      if(span) {
+                        span.textContent = 'COPY WALLET ADDRESS'; 
+                        span.classList.remove('text-[#00e5ff]');
+                      }
+                    }, 2000);
+                  }
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0070d1]/10 to-[#00e5ff]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 group-hover:text-[#00e5ff] transition-colors"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                <span className="copy-txt uppercase tracking-[1px] text-[12px] sm:text-[13px] relative z-10 transition-colors">COPY WALLET ADDRESS</span>
+              </button>
+              
+              <div className="flex flex-wrap items-center justify-center gap-2 mt-2 text-[10px] sm:text-[11px] text-[#5a6a80] font-mono uppercase tracking-[1px] opacity-80">
+                <span>USDT (ERC20/BEP20)</span>
+                <span className="opacity-50">•</span>
+                <span>ETH</span>
+                <span className="opacity-50">•</span>
+                <span>BNB</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
